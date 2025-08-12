@@ -3,8 +3,8 @@ import { Text } from '../Text/Text'
 import styles from './Banner.module.css'
 
 export type BannerCardProps = {
-    header: string,
-    description: string,
+    header: React.ReactNode,
+    description: React.ReactNode,
     button: string,
     image: string,
     className?: string
