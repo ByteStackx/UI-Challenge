@@ -1,4 +1,3 @@
-import React from 'react'
 import { Text } from '../Text/Text'
 import styles from './Promo.module.css'
 import promoitem1 from '../../assets/promoitem1.jpg'

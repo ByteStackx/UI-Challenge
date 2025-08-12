@@ -17,7 +17,7 @@ import { PromoCard } from './components/Promo/PromoCard'
 import { InfoContainer } from './components/Info/InfoContainer'
 
 function App() {
-  const [card, setCard] = useState([
+  const [card, _setCard] = useState([
     {
       header: <>Anida <br /> Dedelay</>,
       description: <>BEST HEALTHY SALAD SERVED <br />IN OUR RESTAURANT</>,
@@ -26,7 +26,7 @@ function App() {
     }
   ])
 
-  const [menu, setMenu] = useState([
+  const [menu, _setMenu] = useState([
     {
       image: menuitem1,
       name: "A TASTE CITRUS FRUIT",
@@ -44,7 +44,7 @@ function App() {
     }
   ])
 
-  const [info, setInfo] = useState([
+  const [info, _setInfo] = useState([
     {
       icon: leaficon,
       header: "FRESH",
