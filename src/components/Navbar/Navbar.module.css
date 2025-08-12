@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+nav {
+    position: relative;
+    top: 0;
+    height: 60px;
+    width: 100vw;
+    background-color: rgb(31, 38, 46);
+}
+
+.content {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; 
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+#wordmark {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 400;     
+  font-size: 1.8rem;     
+  color: white;    
+  letter-spacing: 1px;   
+  text-shadow: 0 0 3px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: rgb(92, 117, 146);
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.icons img:hover {
+  transform: scale(1.2);   
+  filter: brightness(1.2); 
+}
+
+/* Tablet and below */
+@media (max-width: 992px) {
+  .content {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar-icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .logo {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .link {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  #wordmark {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .icons {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icons img {
+    width: 20px;
+    height: 20px;
+  }
+}

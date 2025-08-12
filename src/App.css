@@ -1,0 +1,10 @@
+#app-container {
+    min-height: calc(100vh - 100px);
+    position: relative;
+    width: 100vw;
+    background-color: rgb(26, 32, 39);
+}
+
+#scrollable {
+  
+}
