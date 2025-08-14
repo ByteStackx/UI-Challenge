@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
+body {
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
 nav {
     position: relative;
     top: 0;
-    height: 60px;
-    width: 100vw;
+    width: 100%;
     background-color: rgb(31, 38, 46);
 }
 
@@ -13,15 +16,19 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100%; 
-    padding-left: 40px;
-    padding-right: 20px;
+    height: 60px; 
+    padding: 0 15px;
+    box-sizing: border-box;
+    max-width: 100%;
+    flex-wrap: wrap; 
 }
 
 .links {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 1;
+    min-width: 0; /* Crucial to prevent flex overflow */
 }
 
 .link {
@@ -32,75 +39,82 @@ nav {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 #wordmark {
-  font-family: 'Dancing Script', cursive;
-  font-weight: 400;     
-  font-size: 1.8rem;     
-  color: white;    
-  letter-spacing: 1px;   
-  text-shadow: 0 0 3px rgba(0,0,0,0.3);
-  cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 400;     
+    font-size: 1.8rem;     
+    color: white;    
+    letter-spacing: 1px;   
+    text-shadow: 0 0 3px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .navbar-icons {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: rgb(92, 117, 146);
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .icons img {
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  cursor: pointer;
+    width: 24px;
+    height: 24px;
+    max-width: 100%; /* Prevents overflow */
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
 }
 
 .icons img:hover {
-  transform: scale(1.2);   
-  filter: brightness(1.2); 
+    transform: scale(1.2);   
+    filter: brightness(1.2); 
 }
 
-/* Tablet and below */
+/* Tablet */
 @media (max-width: 992px) {
   .content {
-    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 10px 15px;
+    height: auto;
   }
 
   .logo {
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .links {
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 6px;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .navbar-icons {
-    display: flex;
     justify-content: center;
     width: 100%;
+    gap: 6px;
+  }
+
+  .icons img {
+    width: 22px;
+    height: 22px;
   }
 }
-
 
 /* Mobile */
 @media (max-width: 600px) {
   nav {
-    height: auto;
     padding: 10px 0;
   }
 
@@ -113,16 +127,17 @@ nav {
   .logo {
     justify-content: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 
   .links {
     flex-direction: column;
     align-items: center;
+    gap: 4px;
   }
 
   .link {
-    padding: 8px 0;
+    padding: 6px 0;
     font-size: 14px;
   }
 
@@ -131,13 +146,18 @@ nav {
     text-align: center;
   }
 
-  .icons {
-    width: 40px;
-    height: 40px;
+  .navbar-icons {
+    justify-content: center;
+    gap: 4px;
   }
 
   .icons img {
     width: 20px;
     height: 20px;
   }
+}
+
+/* Global box-sizing safeguard */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
